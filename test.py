@@ -139,3 +139,38 @@ def greet_person(person_name):
 
 
 greet_person("Lois")
+
+print_divider()
+
+# ====== Dictionaries ======
+
+# Creating a dictionary to store student information
+student = {
+    "first_name": "Clark",
+    "last_name": "Kent",
+    "class_number": 75,
+    "is_enrolled": True
+}
+
+# Accessing dictionary values
+print(f"Student First Name: {student['first_name']}")
+print(f"Student Last Name: {student['last_name']}")
+
+# Adding a new key-value pair to the dictionary
+student["age"] = 20
+print(f"Student Age: {student['age']}")
+
+# Updating an existing value
+student["class_number"] = 80
+print(f"Updated Class Number: {student['class_number']}")
+
+# Removing a key-value pair
+del student["is_enrolled"]
+print("Is enrolled key removed:", student)
+
+# Looping through dictionary keys and values
+for key, value in student.items():
+    print(f"{key}: {value}")
+
+print_divider()
+
