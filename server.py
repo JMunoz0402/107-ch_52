@@ -1,7 +1,7 @@
 from flask import Flask, request, abort
 import json
 from config import db
-from flas_cors import CORS
+from flask_cors import CORS
 
 app = Flask(__name__)
 CORS(app) # warning  this disables CORS policy
@@ -47,7 +47,8 @@ def get_products():
     products_db = []
     cursor = db.products.find({})
     for prod in cursor:
-        products_db.append(fix_id(prod))
+        if "title" in prod:
+            products_db.append(fix_id(prod))
     return json.dumps(products_db)
 
 @app.post("/api/products")
